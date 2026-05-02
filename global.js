@@ -89,26 +89,26 @@ export async function fetchJSON(url) {
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   // Clear the container
   containerElement.innerHTML = '';
-  
+
   // Handle empty array case
   if (!projects || projects.length === 0) {
     containerElement.innerHTML = '<p>No projects available.</p>';
     return;
   }
-  
+
   // Loop through each project and create an article
   for (let project of projects) {
-    // Create article element
     const article = document.createElement('article');
-    
-    // Populate with dynamic content
+
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <img src="${project.image}" alt="${project.title}">
-      <p>${project.description}</p>
+      <div class="project-meta">
+        <p>${project.description}</p>
+        <p class="year">${project.year}</p>
+      </div>
     `;
-    
-    // Append to container
+
     containerElement.appendChild(article);
   }
 }

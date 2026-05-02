@@ -72,6 +72,86 @@ button {
     grid-column: 1 / -1;
 }
 
+.searchBar {
+    width: 100%;
+    max-width: 40rem;
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.visualization {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 0.5em;
+    overflow: visible;
+    flex: 0 0 20rem;
+    min-width: 18rem;
+}
+
+#projects-pie-plot path {
+    transition: fill 200ms ease, opacity 200ms ease, transform 200ms ease;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+    flex: 1 1 20rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
+    background: color-mix(in oklch, canvas 100%, white 95%);
+}
+
+.legend-item:hover {
+    transform: translateY(-1px);
+    background: color-mix(in oklch, var(--color-accent), canvas 90%);
+}
+
+.legend-item.selected {
+    border-color: var(--color-accent);
+    background: color-mix(in oklch, var(--color-accent), canvas 95%);
+}
+
+.swatch {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.35rem;
+    background: var(--color, canvas);
+    flex-shrink: 0;
+}
+
+#projects-pie-plot path.selected {
+    fill: oklch(60% 45% 0) !important;
+}
+
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -80,12 +160,26 @@ button {
 
 .projects article {
     display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 3;
     gap: 1em;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    background: color-mix(in oklch, canvas 100%, white 97%);
 }
 
 .projects h2 {
+    margin: 0;
+}
+
+.project-meta {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.project-meta .year {
+    color: #666;
+    font-variant-numeric: oldstyle-nums;
+    font-family: ui-serif, Georgia, serif;
     margin: 0;
 }
 
