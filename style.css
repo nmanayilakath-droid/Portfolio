@@ -247,3 +247,91 @@ h1, h2, h3, h4, h5, h6 {
 .color-scheme select {
     font: inherit;
 }
+
+/* Stats styles */
+.stats {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.stats dt {
+    font-weight: bold;
+    color: #666;
+}
+
+.stats dd {
+    margin: 0;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 0.5rem;
+    backdrop-filter: blur(10px);
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+}
+
+.tooltip[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 0.5rem;
+}
+
+.info dt {
+    font-weight: bold;
+    color: #666;
+}
+
+.info dd {
+    margin: 0;
+}
+
+/* Circle hover */
+circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+circle:hover {
+    transform: scale(1.5);
+}
+
+/* Gridlines */
+.gridlines line {
+    stroke: #ddd;
+    stroke-opacity: 0.5;
+}
+
+/* Selected circles */
+circle.selected {
+    fill: #ff6b6b;
+}
+
+/* Brush selection */
+@keyframes marching-ants {
+    to {
+        stroke-dashoffset: -8;
+    }
+}
+
+.selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+}
