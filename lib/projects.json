@@ -70,6 +70,13 @@
     "year": "2026",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Nisi, harum soluta aspernatur pariatur reiciendis, rerum officia facere atque veniam odit dicta commodi quis adipisci? Dolor minima labore sint corrupti repellat, molestias perferendis blanditiis iure exercitationem reprehenderit quidem provident!"
+  },
+  {
+    "title": "Bikewatching",
+    "url": "bikewatching/index.html",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Interactive Boston bike traffic map built with Mapbox and D3. Filter by time of day and explore arrivals versus departures."
   }
 ]
 

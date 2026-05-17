@@ -99,10 +99,12 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   // Loop through each project and create an article
   for (let project of projects) {
     const article = document.createElement('article');
+    const titleLinkStart = project.url ? `<a href="${project.url}">` : '';
+    const titleLinkEnd = project.url ? '</a>' : '';
 
     article.innerHTML = `
-      <${headingLevel}>${project.title}</${headingLevel}>
-      <img src="${project.image}" alt="${project.title}">
+      ${titleLinkStart}<${headingLevel}>${project.title}</${headingLevel}>${titleLinkEnd}
+      ${titleLinkStart}<img src="${project.image}" alt="${project.title}">${titleLinkEnd}
       <div class="project-meta">
         <p>${project.description}</p>
         <p class="year">${project.year}</p>
