@@ -51,8 +51,9 @@ function updateTimeDisplay() {
 }
 
 function getStationCoords(station) {
-  const point = map.project([+station.Long, +station.Lat]);
+  const point = map.project([+station.lon, +station.lat]);
   return { x: point.x, y: point.y };
+}
 }
 
 function filterTripsByTime(trips, filterValue) {
