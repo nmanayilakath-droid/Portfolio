@@ -5,12 +5,17 @@ body {
 }
 
 #map {
+  position: relative;
   min-height: 60vh;
 }
 
 #map svg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 #map circle {
